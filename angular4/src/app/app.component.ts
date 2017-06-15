@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'baIT monitoring tool app';
+  pname = 'username';
+  ppword = 'password';
+  showOutput(){
+    console.log('huuhu');
+  }
+  sendLogin(name,password){
+    console.log('sent name:'+name);
+    console.log('sent password:'+password);
+  }
 }
