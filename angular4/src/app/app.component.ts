@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'baIT monitoring tool app';
   pname = 'username';
   ppword = 'password';
+  psubmit = 'send';
   showOutput(){
     console.log('huuhu');
   }
