@@ -4,8 +4,21 @@
 <h1>
   {{title}}
 </h1>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
 
-<div class="inner-window">
+  <ul class="nav navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['controlling']">Controlling</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['statistics']">Statistics</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
   <router-outlet></router-outlet>
 </div>
 </div>
