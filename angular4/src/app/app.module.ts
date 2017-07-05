@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { InputComponent } from './input/input.component';
+import { ControllingComponent } from './controlling/controlling.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [
   // basic routes
@@ -20,7 +22,9 @@ const routes: Routes = [
   declarations: [
   AppComponent,
   DashboardComponent,
-  LoginComponent
+  LoginComponent,
+  ControllingComponent,
+  StatisticsComponent
   ],
   imports: [
     BrowserModule,
