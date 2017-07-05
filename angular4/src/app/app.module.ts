@@ -3,15 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ControllingComponent } from './controlling/controlling.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    ControllingComponent,
-    LoginComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule
