@@ -1,0 +1,21 @@
+h1 {
+  color:blue;
+  text-transform:capitalize;
+}
+
+.login-layout {
+  text-align:center;
+}
+
+.login-layout input {
+  /*float:right;*/
+  margin: 5px 0 5px 0;
+}
+.login-layout .button-container, .login-layout .input-container {
+  margin: 0 auto;
+  max-width:160px;
+}
+
+.login-layout input[type="button"] {
+  float:right;
+}
