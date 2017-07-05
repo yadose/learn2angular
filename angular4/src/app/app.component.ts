@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'baIT monitoring tool app';
+  title: string;
+  constructor(){
+    this.title = 'B@IT Control Center';
+  }
+
   showOutput(){
     console.log('huuhu');
   }
