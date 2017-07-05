@@ -6,20 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  sName: string;
-  sPword: string;
-  sSubmit: string;
+  sCLoginName: string;
+  sCLoginPword: string;
+  sCLoginSubmit: string;
+  sCLoginInputclass: string;
   constructor() {
-    this.sName = 'name';
-    this.sPword = 'password';
-    this.sSubmit = 'send';
+    this.sCLoginName = 'name';
+    this.sCLoginPword = 'password';
+    this.sCLoginSubmit = 'send';
+    this.sCLoginInputclass = 'text-field';
   }
 
   ngOnInit() {
   }
 
-  sendLogin(){
+  sendLogin(siName,siPassword){
     //login function needs to be implemented later on
+    console.log(siName+siPassword);
 
   }
 }
