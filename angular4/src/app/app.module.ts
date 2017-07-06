@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ControllingComponent } from './controlling/controlling.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { ApiConnectionComponent } from './api-connection/api-connection.component';
 
 const routes: Routes = [
   // basic routes
@@ -27,7 +28,8 @@ const routes: Routes = [
   DashboardComponent,
   LoginComponent,
   ControllingComponent,
-  StatisticsComponent
+  StatisticsComponent,
+  ApiConnectionComponent
   ],
   imports: [
     BrowserModule,
