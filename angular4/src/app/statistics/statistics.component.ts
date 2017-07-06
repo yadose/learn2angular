@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-statistics',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
+
+  }
+
+  getData(){
+    console.log('joo');
   }
 
 }
