@@ -14,7 +14,7 @@ import { ApiConnectionComponent } from './api-connection/api-connection.componen
 
 const routes: Routes = [
   // basic routes
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'controlling', component: ControllingComponent },
   { path: 'statistics', component: StatisticsComponent },
   { path: 'home', component: DashboardComponent },
