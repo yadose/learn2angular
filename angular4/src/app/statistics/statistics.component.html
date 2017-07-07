@@ -1,4 +1,2 @@
-<p>
-  statistics works!
-  {{getData()}}
-</p>
+<input type="button" (click)=setType(this.value) value="error"/>
+<app-api-connection [sTablename]="sType" (onLoadingComplete)="getData($event)"></app-api-connection>
