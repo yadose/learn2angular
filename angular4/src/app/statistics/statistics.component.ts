@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-statistics',
@@ -7,15 +6,20 @@ import { Http } from '@angular/http';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-
-  constructor(private http: Http) { }
+  sType: string;
+  constructor() {
+    this.sType = 'job';
+  }
 
   ngOnInit() {
 
   }
 
-  getData(){
-    console.log('joo');
+  setType(siType){
+    this.sType = siType;
+  }
+  getData(output){
+    console.log(output);
   }
 
 }
