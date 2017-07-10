@@ -29,7 +29,7 @@ export class ApiConnectionComponent implements OnInit {
     this.bLoading = true;
     this.oHttp.request(this.sUrl+this.sTablename)
     .subscribe((res: Response) => {
-      this.oData = res.json();
+      this.oData = JSON.parse(res.json());
       this.bLoading = false;
       this.onLoadingComplete.emit(this.oData);
     }
