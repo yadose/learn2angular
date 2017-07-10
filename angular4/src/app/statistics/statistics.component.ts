@@ -20,23 +20,25 @@ export class StatisticsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    let self = this;
+    //disable contextmenu and set filtertype
+    $('datatable-header-cell').ready(function(){
+      $('datatable-header-cell').on('contextmenu',function(){
+        self.setFilterType($(this)[0].innerText);
+        return false;
+      });
+    });
   }
 
   setType(siType){
     this.sType = siType;
-    let self = this;
-    $('datatable-header-cell').on('click',function(){
-      self.setFilterPlaceholder($(this)[0].innerText);
-    });
   }
   getData(output){
     this.jRows = output;
     this.jColumns = [{ name: 'deviceId'}, {name: 'end'}, {name: 'pid'}, {name: 'start'}, {name: 'type'}, {name: 'updatedAt'}];
   }
 
-  setFilterPlaceholder(title){
+  setFilterType(title){
     $('#filterInput').attr('placeholder', title);
   }
-
 }
