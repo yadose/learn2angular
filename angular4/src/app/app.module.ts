@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 import { RouterModule, Routes } from '@angular/router';
 
 import { HttpModule } from '@angular/http';
@@ -34,7 +36,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpModule
+    HttpModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
