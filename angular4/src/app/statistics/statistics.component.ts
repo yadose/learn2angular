@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+
+
+
 
 @Component({
   selector: 'app-statistics',
@@ -6,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
+
   sType: string;
   constructor() {
     this.sType = 'job';
+    $('body').append('<div id="sometable"></div>');
+    $('#sometable').html('sup');
   }
 
   ngOnInit() {
