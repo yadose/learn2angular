@@ -12,10 +12,11 @@ import * as $ from 'jquery';
 export class StatisticsComponent implements OnInit {
 
   sType: string;
+  jRows: object; //jsonstring
+  jColumns: object; //jsonstring
+
   constructor() {
     this.sType = 'job';
-    $('body').append('<div id="sometable"></div>');
-    $('#sometable').html('sup');
   }
 
   ngOnInit() {
@@ -26,7 +27,8 @@ export class StatisticsComponent implements OnInit {
     this.sType = siType;
   }
   getData(output){
-    console.log(output);
+    this.jRows = output;
+    this.jColumns = [{ name: 'deviceId'}, {name: 'end'}, {name: 'pid'}, {name: 'start'}, {name: 'type'}, {name: 'updatedAt'}];
   }
 
 }
