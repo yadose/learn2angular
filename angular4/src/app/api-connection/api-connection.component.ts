@@ -7,9 +7,17 @@ import { Http,Response } from '@angular/http';
   styleUrls: ['./api-connection.component.css']
 })
 export class ApiConnectionComponent implements OnInit {
+  @Input() set sFilter(val: string) {
+    this._sFilter = val;
+    if(val != ''){
+      this.makeRequest();
+    }
+  }
   @Input() sTablename: string;
+  @Input() sActiveFilter: string;
   @Output() onLoadingComplete: EventEmitter<object>;
 
+  _sFilter: string;
   sUrl: string;
   oData: Object;
   bLoading: boolean;
@@ -26,6 +34,7 @@ export class ApiConnectionComponent implements OnInit {
   }
 
   makeRequest() {
+
     this.bLoading = true;
     this.oHttp.request(this.sUrl+this.sTablename)
     .subscribe((res: Response) => {
