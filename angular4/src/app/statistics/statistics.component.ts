@@ -66,8 +66,6 @@ export class StatisticsComponent implements OnInit {
   }
 
   sendFilteredRequest(filterText){
-    console.log('new request');
     this.sFilter = filterText;
-
   }
 }
