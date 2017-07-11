@@ -1,7 +1,7 @@
 <input type="button" (click)=setType(this.value) value="error" id="check"/>
-<app-api-connection [sTablename]="sType" (onLoadingComplete)="getData($event)"></app-api-connection>
+<app-api-connection [sTablename]="sType" [sFilter]="sFilter" [sActiveFilter]="sActiveFilter" (onLoadingComplete)="getData($event)"></app-api-connection>
 <h2>NGX Table Test</h2>
-<input id="filterInput" type="text" placeholder="rightclick the column you wish to filter" />
+<input id="filterInput" type="text" placeholder="rightclick the column you wish to filter"/>
 <div>
   <ngx-datatable class="material"
     [rows]="jRows"
