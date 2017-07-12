@@ -24,8 +24,7 @@ export class StatisticsComponent implements OnInit {
 
   constructor() {
     this.sType = 'job';
-    this.sActiveFilter = '';
-    this.sFilter = '';
+    this.reloadTable();
 
   }
 
@@ -33,9 +32,14 @@ export class StatisticsComponent implements OnInit {
 
   }
 
-  setType(siType){
-    //this.sType = siType;
+  setTableError(siType){
     this.sType = 'error';
+    this.reloadTable();
+  }
+
+  setTableJob(siType){
+    this.sType = 'job';
+    this.reloadTable();
   }
 
   getData(output){
@@ -56,7 +60,7 @@ export class StatisticsComponent implements OnInit {
 
   setFilterListener(){
     let self = this;
-    //disable contextmenu and set filtertype listener
+    //disable contextmenu and set filtertype listener for columns on rightclick
     $('datatable-header-cell').ready(function(){
       $('datatable-header-cell').on('contextmenu',function(){
         self.setFilterType($(this)[0].innerText);
@@ -67,5 +71,11 @@ export class StatisticsComponent implements OnInit {
 
   sendFilteredRequest(filterText){
     this.sFilter = filterText;
+  }
+
+  reloadTable(){
+    this.sActiveFilter = '';
+    this.sFilter = 'reload';
+    console.log('sadg');
   }
 }
