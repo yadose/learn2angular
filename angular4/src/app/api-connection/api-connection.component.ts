@@ -7,20 +7,32 @@ import { Http, Response, Headers } from '@angular/http';
   styleUrls: ['./api-connection.component.css']
 })
 export class ApiConnectionComponent implements OnInit {
-  @Input() set sFilter(val: string) {
-    this._sFilter = val;
-    if(val != ''){
-      this.makeRequestPOST();
-    }
-    else if(typeof this.sTablename!='undefined'){
+  @Input() set sTablename(val: string){
+  console.log('tablename refresh');
+    this._sTablename = val;
+    if(typeof this._sTablename!='undefined'){
+    console.log('tablename refresh done');
+      console.log(this._sTablename+'GET');
       this.makeRequestGET();
     }
   }
-  @Input() sTablename: string;
+  @Input() set sFilter(val: string) {
+  console.log('filter refresh');
+    this._sFilter = val;
+    if(val != '' && val != 'reload' && typeof this._sTablename!='undefined'){
+      this.makeRequestPOST();
+      console.log('POST');
+    }
+    else if(typeof this._sTablename!='undefined'){
+      console.log(this._sTablename+'GET');
+      this.makeRequestGET();
+    }
+  }
   @Input() sActiveFilter: string;
   @Output() onLoadingComplete: EventEmitter<object>;
 
   _sFilter: string;
+  _sTablename: string;
   sUrl: string;
   oData: Object;
   bLoading: boolean;
@@ -33,12 +45,12 @@ export class ApiConnectionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.makeRequestGET();
+    
   }
 
   makeRequestGET() {
     this.bLoading = true;
-    this.oHttp.request(this.sUrl+this.sTablename)
+    this.oHttp.request(this.sUrl+this._sTablename)
     .subscribe((res: Response) => {
       this.oData = JSON.parse(res.json());
       this.bLoading = false;
@@ -53,7 +65,7 @@ export class ApiConnectionComponent implements OnInit {
     headerdata.append('Content-Type','multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW');
     this.bLoading = true;
     this.oHttp.post(
-    this.sUrl+this.sTablename+'/filter/',
+    this.sUrl+this._sTablename+'/filter/',
     body,
     {
       headers: headerdata
